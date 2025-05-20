@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MB Web Uploader">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mbwebup.vercel.app/" />
+  <meta name="google-site-verification" content="NBS045VD2HxbYhLhbwbitICkrjIWduWGw5GYc2mIkY8" />
+  <title>MXC Website Uploader</title>
+  <link rel="icon" href="exc.png" sizes="128x128">
+  <script defer src="https://speed.vercel.dev/script.js" data-sdkit="prj_3hcIMnWwedCTeQQgziVLzulAGpfH"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    header span {
+      font-size: 1.5em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 2s ease infinite;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      font-weight: normal;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 4s ease infinite;
+    }
+
+    p {
+      font-size: 1em;
+      color: white;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      background-size: 300% 300%;
+      color: black;
+      padding: 12px 20px;
+      margin: 10px 8px;
+      font-size: 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      animation: gradientMove 5s linear infinite;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      user-select: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn:active {
+      transform: scale(0.8);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .gb {
+      border: 3px solid cyan;
+    }
+
+    .vl {
+      border: 3px solid cyan;
+    }
+
+    .inf {
+      background: linear-gradient(90deg, #ff6ec4, #7873f5, #3fd4ff);
+      border: 4px solid cyan;
+      box-shadow: 0 0 10px 1px #ff0080, 0 0 10px 2px #2afadf;
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease;
+    }
+    .profil {
+      background: url('https://madzbio.vercel.app/exc.png');
+      background-size: cover;
+      background-position: center;
+      width: 40%;
+      height: 120px;
+      border-radius: 100%;
+      border: 4px solid black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="profil"></div>
+    <span>MXC Website Uploader</span>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h1>Web Uploader</h1>
+      <p id="pesan">Baca Panduan Untuk Mengetahui Lebih Lanjut.</p>
+      <button class="btn gb" onclick="github()">Upload GitHub</button>
+      <button class="btn vl" onclick="vercel()">Lanjut Vercel</button>
+    </div>
+    <button class="btn inf fade-in" onclick="info()">Panduan Web</button>
+  </div>
+
+  <script>
+    function github() {
+      alert('Login / Buat akun Github, Lalu Buat Repository Anda.');
+      window.open('https://github.com/login', '_blank');
+    }
+
+    function vercel() {
+      alert('Login / Buat akun Vercel Menggunakan Akun Github');
+      window.open('https://vercel.com/login', '_blank');
+    }
+
+    function info() {
+      alert(`Panduan:
+
+1. Klik "Upload GitHub" untuk login/buat akun GitHub, lalu buat repository dan upload file Anda.
+
+2. Klik "Lanjut Vercel" untuk login ke Vercel menggunakan akun GitHub, pilih repository Anda dan klik tombol Visit untuk mendapatkan link website.
+
+3. Website Anda sekarang online!`);
+    }
+  </script>
+</body>
+</html>
